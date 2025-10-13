@@ -1,0 +1,23 @@
+models:
+  - name: fact_customer_behaviour
+    description: "fact table have sum/avg of customer spents churned and recency"
+    
+    columns:
+      - name: churned
+        tests:
+          - accepted_values:
+              values: [0, 1]
+
+models:
+  - name: fact_country_performance
+    description: "Country level performance"
+
+    columns: 
+      - name: num_customers
+        description: "Total customers count per country"
+      - name: num_orders
+        description: "Total orders count per country"
+      - name: total_revenue
+        description: "Total revenue per country"
+        tests:
+          - not_null

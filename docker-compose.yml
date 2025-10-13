@@ -1,0 +1,72 @@
+services:
+  postgres:
+    image: postgres:latest
+    container_name: dbt_postgres
+    restart: always
+    environment:
+      POSTGRES_USER: ${DB_USER}
+      POSTGRES_PASSWORD: ${DB_PASSWORD}
+      POSTGRES_DB: ${DB_DATABASE}
+    ports:
+      - "5432:5432"
+    volumes:
+      - pg_data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USER} -d ${DB_DATABASE}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    env_file:
+      - .env
+
+  pgadmin:
+    image: elestio/pgadmin
+    container_name: pgadmin_dbt
+    restart: always
+    ports: 
+      - "8888:80"
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_EMAIL} 
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_PASSWORD} 
+      volumes: pgadmin_data:/var/lib/pgadmin
+
+
+  data_init:
+    image: python:3.11-slim
+    container_name: pg_init_data_load
+    volumes:
+      - .:/usr/app
+    working_dir: /usr/app/src
+    depends_on:
+      postgres:
+        condition: service_healthy
+    env_file:
+      - .env
+    command: >
+      bash -c "pip install sqlalchemy pandas openpyxl && python insert_data.py"
+
+
+  dbt:
+    image: python:3.11-slim 
+    container_name: dbt_core
+    ports:
+      - "3000:8080" 
+    volumes:
+      - .:/usr/app 
+    working_dir: /usr/app/online_retail
+    depends_on:
+      data_init:
+        condition: service_completed_successfully
+    environment:
+      DBT_PROFILES_DIR: /usr/app/online_retail # Ensures dbt uses your profiles.yml file from the project directory
+    entrypoint: ["tail", "-f", "/dev/null"] # Keeps the dbt container running
+    build:
+      context: .
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+
+
+volumes:
+  pg_data:
+  pgadmin_data:
