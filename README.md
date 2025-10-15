@@ -59,8 +59,8 @@ The primary focus was mastering **DBT**, resulting in:
 **Step 1: Clone the Repository**
 
 ```bash
-git clone https://github.com/NotAbdelrahmanelsayed/retail-cleaning-modeling.git
-cd retail-cleaning-modeling
+git clone https://github.com/otmanedd/CleanRetailDyaf.git
+cd CleanRetailDyaf
 ```
 
 **Step 2: Set Up Environment Variables**
