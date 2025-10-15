@@ -1,7 +1,7 @@
 # 📊 Retail Data Pipeline: From Excel to Dashboard via DBT, PostgreSQL, and Power BI.
 An **end-to-end data pipeline** designed for cleansing, modeling, and analyzing e-commerce sales data from Excel to interactive dashboards.
 
-⏱ **Time Spent:** 2,462 minutes (~41 hours)  
+⏱ **Time Spent: 3,000 minutes (~50 hours) 
 🧱 **Commits:** +75 detailed commits tracking each development step
 
 --- 
