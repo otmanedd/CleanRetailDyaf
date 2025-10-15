@@ -135,10 +135,7 @@ dbt docs serve         # Serve and view documentation
 
 ## <a name="sources--references"></a>🔗 Sources & References
 
-### GitHub Repositories
 
-* [Reddit ETL Project](https://github.com/NotAbdelrahmanelsayed/reddit_etl)
-* [DBT PostgreSQL Template](https://github.com/scriptstar/dbt_pg_project)
 
 ### Official Documentation
 
