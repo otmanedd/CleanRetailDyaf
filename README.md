@@ -161,11 +161,11 @@ dbt docs serve         # Serve and view documentation
 
 ---
 
-## Weitere Informationen
+## Further information
 
-Das Projekt wurde lokal entwickelt und sorgfältig strukturiert. 
-Die Commit-Historie auf GitHub reflektiert die wichtigsten Entwicklungsschritte, 
-einige Micro-Commits wurden für Übersichtlichkeit zusammengefasst.
+The project was developed locally and carefully structured.
+The commit history on GitHub reflects the most important development steps;
+some micro-commits have been combined for clarity.
 
 ## <a name="future-improvements"></a>🚧 Future Improvements
 
