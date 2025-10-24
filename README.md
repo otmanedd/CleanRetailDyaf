@@ -3,7 +3,7 @@ An **end-to-end data pipeline** designed for cleansing, modeling, and analyzing 
 
 ⏱ **Time Spent: 3,000 minutes (~50 hours) 
 🧱 **Commits:** +75 detailed commits tracking each development step
-## This project was developed locally
+
 
 --- 
 
@@ -160,6 +160,12 @@ dbt docs serve         # Serve and view documentation
 * I spent 10 hours solving challenging dbt and SQL assignments created by ChatGPT, receiving feedback from it iteratively to sharpen my skills.
 
 ---
+
+## Weitere Informationen
+
+Das Projekt wurde lokal entwickelt und sorgfältig strukturiert. 
+Die Commit-Historie auf GitHub reflektiert die wichtigsten Entwicklungsschritte, 
+einige Micro-Commits wurden für Übersichtlichkeit zusammengefasst.
 
 ## <a name="future-improvements"></a>🚧 Future Improvements
 
