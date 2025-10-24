@@ -3,6 +3,7 @@ An **end-to-end data pipeline** designed for cleansing, modeling, and analyzing 
 
 ⏱ **Time Spent: 3,000 minutes (~50 hours) 
 🧱 **Commits:** +75 detailed commits tracking each development step
+This project was developed locally
 
 --- 
 
